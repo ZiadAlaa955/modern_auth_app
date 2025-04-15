@@ -7,17 +7,47 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 85,
-              ),
-              Logo(),
-            ],
+      body: Stack(
+        children: [
+          Positioned(
+            left: 60,
+            bottom: 440,
+            child: Image(
+              image: AssetImage('assets/images/line.png'),
+            ),
           ),
-        ),
+          Positioned(
+            left: 34,
+            bottom: 410,
+            child: Image(
+              image: AssetImage('assets/images/light.png'),
+            ),
+          ),
+          Positioned(
+            left: 120,
+            bottom: 470,
+            child: Image(
+              image: AssetImage('assets/images/line.png'),
+            ),
+          ),
+          Positioned(
+            left: 94,
+            bottom: 440,
+            child: Image(
+              image: AssetImage('assets/images/light.png'),
+            ),
+          ),
+          Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 110,
+                ),
+                Logo(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

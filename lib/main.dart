@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modern_auth_app/Utils/app_router.dart';
 
 void main() {
   runApp(const ModernAuthApp());
@@ -9,8 +10,9 @@ class ModernAuthApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
     );
   }
 }

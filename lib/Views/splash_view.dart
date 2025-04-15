@@ -10,29 +10,38 @@ class SplashView extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
+            top: 240,
+            left: 0,
+            right: 0,
+            child: Image(
+              height: 360,
+              image: AssetImage('assets/images/welcome.png'),
+            ),
+          ),
+          Positioned(
             left: 60,
-            bottom: 440,
-            child: Image(
-              image: AssetImage('assets/images/line.png'),
-            ),
-          ),
-          Positioned(
-            left: 34,
-            bottom: 410,
-            child: Image(
-              image: AssetImage('assets/images/light.png'),
-            ),
-          ),
-          Positioned(
-            left: 120,
             bottom: 470,
             child: Image(
               image: AssetImage('assets/images/line.png'),
             ),
           ),
           Positioned(
-            left: 94,
+            left: 34,
             bottom: 440,
+            child: Image(
+              image: AssetImage('assets/images/light.png'),
+            ),
+          ),
+          Positioned(
+            left: 120,
+            bottom: 500,
+            child: Image(
+              image: AssetImage('assets/images/line.png'),
+            ),
+          ),
+          Positioned(
+            left: 94,
+            bottom: 470,
             child: Image(
               image: AssetImage('assets/images/light.png'),
             ),
@@ -44,6 +53,18 @@ class SplashView extends StatelessWidget {
                   height: 110,
                 ),
                 Logo(),
+                Spacer(),
+                Text(
+                  'LOREM IPSUM',
+                  style: TextStyle(
+                    fontFamily: 'prime',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(
+                  height: 100,
+                ),
               ],
             ),
           ),

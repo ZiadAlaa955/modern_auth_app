@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:modern_auth_app/Utils/app_router.dart';
+import 'package:modern_auth_app/Views/login_view.dart';
 import 'package:modern_auth_app/Widgets/logo.dart';
+import 'package:modern_auth_app/Widgets/splash_view_text_section.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    navigateToSignIn();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +25,11 @@ class SplashView extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: 240,
+            top: 230,
             left: 0,
             right: 0,
             child: Image(
-              height: 360,
+              height: 320,
               image: AssetImage('assets/images/welcome.png'),
             ),
           ),
@@ -50,26 +65,26 @@ class SplashView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 110,
+                  height: 105,
                 ),
                 Logo(),
                 Spacer(),
-                Text(
-                  'LOREM IPSUM',
-                  style: TextStyle(
-                    fontFamily: 'prime',
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                SplashViewTextSection(),
                 SizedBox(
-                  height: 100,
+                  height: 80,
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  void navigateToSignIn() {
+    Future.delayed(
+      const Duration(seconds: 3),
+      () => context.go(AppRouter.loginView),
     );
   }
 }

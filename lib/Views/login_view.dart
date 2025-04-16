@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:modern_auth_app/Utils/app_colors.dart';
+import 'package:modern_auth_app/Utils/app_router.dart';
+import 'package:modern_auth_app/Widgets/auth_navigation_text.dart';
+import 'package:modern_auth_app/Widgets/custom_auth_button.dart';
 import 'package:modern_auth_app/Widgets/custom_text_field.dart';
 import 'package:modern_auth_app/Widgets/logo.dart';
 
@@ -87,32 +91,7 @@ class LoginView extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    Container(
-                      height: 51,
-                      width: 190,
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [
-                            AppColors.primaryColor,
-                            AppColors.secondaryColor
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'LOG IN',
-                          style: TextStyle(
-                            fontFamily: GoogleFonts.roboto().fontFamily,
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
+                    const CustomAuthButton(text: 'LOG IN'),
                     const SizedBox(
                       height: 25,
                     ),
@@ -151,29 +130,14 @@ class LoginView extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Don’t have an account? ',
-                          style: TextStyle(
-                            fontFamily: GoogleFonts.roboto().fontFamily,
-                            fontSize: 15,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            fontFamily: GoogleFonts.roboto().fontFamily,
-                            fontSize: 15,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ],
+                    AuthNavigationText(
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.signupView);
+                      },
+                      questionText: 'Don’t have an account? ',
+                      navigationtext: 'Sign Up',
                     ),
                   ],
                 ),

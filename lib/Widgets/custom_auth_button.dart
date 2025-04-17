@@ -13,8 +13,19 @@ class CustomAuthButton extends StatelessWidget {
       height: 51,
       width: 190,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 10,
+            offset: const Offset(1, 4),
+          ),
+        ],
         gradient: const LinearGradient(
-          colors: [AppColors.primaryColor, AppColors.secondaryColor],
+          colors: [
+            AppColors.primaryColor,
+            AppColors.secondaryColor,
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -25,7 +36,7 @@ class CustomAuthButton extends StatelessWidget {
           text,
           style: TextStyle(
             fontFamily: GoogleFonts.roboto().fontFamily,
-            fontSize: 18,
+            fontSize: 17,
             color: Colors.white,
             fontWeight: FontWeight.w900,
           ),
